@@ -10,28 +10,27 @@ steps:
   - name: code-analysis
     image: aosapps/drone-sonar-plugin
     settings:
-      sonar_host:
-        from_secret: sonar_host
+      sonar_host: https://codefirst.iut.uca.fr/sonar/
       sonar_token:
         from_secret: sonar_token
 
   - name: docker-build-and-push
     image: plugins/docker
     settings:
-       dockerfile: docker/production/Dockerfile
-       context: .
-       registry: hub.codefirst.iut.uca.fr
-       mirror: https://proxy.iut.uca.fr:8443
-       repo: hub.codefirst.iut.uca.fr/guillaume.chambat/portfolio
-       username:
-         from_secret: SECRET_REGISTRY_USERNAME
-       password:
-         from_secret: SECRET_REGISTRY_PASSWORD
+      dockerfile: docker/production/Dockerfile
+      context: .
+      registry: hub.codefirst.iut.uca.fr
+      mirror: https://proxy.iut.uca.fr:8443
+      repo: hub.codefirst.iut.uca.fr/guillaume.chambat/portfolio
+      username:
+        from_secret: SECRET_REGISTRY_USERNAME
+      password:
+        from_secret: SECRET_REGISTRY_PASSWORD
 
   - name: deploy-container
     image: hub.codefirst.iut.uca.fr/thomas.bellembois/codefirst-dockerproxy-clientdrone:latest
     environment:
-        IMAGENAME: hub.codefirst.iut.uca.fr/guillaume.chambat/portfolio:latest
-        CONTAINERNAME: portfolio
-        COMMAND: create
-        OVERWRITE: true
+      IMAGENAME: hub.codefirst.iut.uca.fr/guillaume.chambat/portfolio:latest
+      CONTAINERNAME: portfolio
+      COMMAND: create
+      OVERWRITE: true
