@@ -10,6 +10,7 @@ import { useTranslations } from 'next-intl';
 import WorkExperience from "@/types/work-experience";
 import EductaionExperience from "@/types/education-experience";
 import ProjectExperience from "@/types/project-experience";
+import { withBasePath } from "@/utils/paths";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -95,7 +96,7 @@ export default function Page() {
             >
               <ResumeCard
                 href={education.href}
-                logoUrl={education.logoUrl}
+                logoUrl={withBasePath(education.logoUrl)}
                 altText={education.school}
                 title={education.school}
                 subtitle={education.degree}
