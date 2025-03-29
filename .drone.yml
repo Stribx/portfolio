@@ -18,11 +18,11 @@ steps:
   - name: docker-build-and-push
     image: plugins/docker
     settings:
-       dockerfile: docker/Dockerfile
+       dockerfile: docker/production/Dockerfile
        context: .
        registry: hub.codefirst.iut.uca.fr
        mirror: https://proxy.iut.uca.fr:8443
-       repo: hub.codefirst.iut.uca.fr/guillaume.chambat/test2
+       repo: hub.codefirst.iut.uca.fr/guillaume.chambat/portoflio
        username:
          from_secret: SECRET_REGISTRY_USERNAME
        password:
@@ -31,7 +31,7 @@ steps:
   - name: deploy-container
     image: hub.codefirst.iut.uca.fr/thomas.bellembois/codefirst-dockerproxy-clientdrone:latest
     environment:
-        IMAGENAME: hub.codefirst.iut.uca.fr/guillaume.chambat/test2:latest
-        CONTAINERNAME: test2
+        IMAGENAME: hub.codefirst.iut.uca.fr/guillaume.chambat/portoflio:latest
+        CONTAINERNAME: portoflio
         COMMAND: create
         OVERWRITE: true

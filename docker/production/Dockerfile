@@ -1,21 +1,11 @@
-ARG NODE_VERSION=22.14.0-alpine
+ARG BUN_VERSION=1.2.7-alpine
 
-FROM node:${NODE_VERSION} AS base
+FROM oven/bun:${BUN_VERSION} AS base
 
 FROM base AS deps
-
-RUN apk add --no-cache libc6-compat
-
 WORKDIR /app
-
-COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* .npmrc* ./
-RUN \
-  if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
-  elif [ -f package-lock.json ]; then npm ci; \
-  elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm i; \
-  else echo "Lockfile not found." && exit 1; \
-  fi
-
+COPY package.json bun.lock* ./
+RUN bun install --frozen-lockfile
 
 FROM base AS builder
 WORKDIR /app
@@ -23,7 +13,7 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 COPY .env.production.sample .env.production
-RUN npm run build
+RUN bun run build
 
 FROM base AS runner
 WORKDIR /app
@@ -34,14 +24,12 @@ RUN addgroup -g 1001 -S nodejs
 RUN adduser -S nextjs -u 1001
 
 COPY --from=builder /app/public ./public
-
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 USER nextjs
 
 EXPOSE 3000
-
 ENV PORT=3000
 
-CMD HOSTNAME="0.0.0.0" node server.js
+CMD HOSTNAME="0.0.0.0" bun run server.js
