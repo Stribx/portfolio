@@ -22,7 +22,7 @@ steps:
        context: .
        registry: hub.codefirst.iut.uca.fr
        mirror: https://proxy.iut.uca.fr:8443
-       repo: hub.codefirst.iut.uca.fr/guillaume.chambat/portoflio
+       repo: hub.codefirst.iut.uca.fr/guillaume.chambat/portfolio
        username:
          from_secret: SECRET_REGISTRY_USERNAME
        password:
@@ -31,7 +31,7 @@ steps:
   - name: deploy-container
     image: hub.codefirst.iut.uca.fr/thomas.bellembois/codefirst-dockerproxy-clientdrone:latest
     environment:
-        IMAGENAME: hub.codefirst.iut.uca.fr/guillaume.chambat/portoflio:latest
-        CONTAINERNAME: portoflio
+        IMAGENAME: hub.codefirst.iut.uca.fr/guillaume.chambat/portfolio:latest
+        CONTAINERNAME: portfolio
         COMMAND: create
         OVERWRITE: true
