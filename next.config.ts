@@ -3,9 +3,8 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
   output: "standalone",
-  basePath: '/containers/guillaumechambat-portfolio',
-  assetPrefix: '/containers/guillaumechambat-portfolio/',
-  trailingSlash: true
+  basePath: "/containers/guillaumechambat-portfolio",
+  assetPrefix: "/containers/guillaumechambat-portfolio/"
 };
 
 const withNextIntl = createNextIntlPlugin();
