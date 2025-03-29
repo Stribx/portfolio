@@ -1,0 +1,27 @@
+export const DATA = {
+  name: 'Guillaume Chambat',
+  initials: "GC",
+  url: "https://iut.uca.fr",
+  location: "Clermont-Ferrand, CF",
+  locationLink: "https://www.google.com/maps/place/Clermont-Ferrand",
+  description: "Welcome to my portofolio",
+  avatarUrl: "/me.webp",
+  skills: [
+    "PHP",
+    "React",
+    "Next.js",
+    "Astro",
+    "Typescript",
+    "Node.js",
+    "Python",
+    "Rust",
+    "MariaDB",
+    "Postgres",
+    "Docker",
+    "Java",
+    "Kotlin",
+    "C++",
+    "C#",
+    "C",
+  ]
+} as const;

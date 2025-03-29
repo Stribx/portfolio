@@ -1,0 +1,143 @@
+{
+  "HomePage": {
+    "common": {
+      "present": "Aujourd'hui"
+    },
+    "hero": {
+      "title": "Salut, je suis",
+      "description": "Étudiant en BUT Informatique. Passionné par le développement, j’adore créer des applications performantes et bien structurées, en alliant optimisation et bonnes pratiques."
+    },
+    "about": {
+      "title": "A propos de moi",
+      "summary": "Passionné par l’informatique depuis plusieurs années, j’ai débuté mon parcours avec un BTS SIO, où j’ai acquis de solides bases en développement et en gestion de systèmes. Souhaitant approfondir mes connaissances, j’ai poursuivi avec un BUT Informatique, me permettant de perfectionner mes compétences en développement logiciel, en architecture des systèmes et en ingénierie logicielle.J’adore concevoir des applications optimisées et bien structurées, en appliquant les principes SOLID et les bonnes pratiques de développement. Mon expertise s’étend sur plusieurs technologies, notamment PHP, TypeScript, SQL et Linux, avec un intérêt particulier pour les architectures logicielles et les systèmes backend.Toujours curieux et en quête d’apprentissage, je prends plaisir à relever de nouveaux défis techniques et à explorer des solutions innovantes pour concevoir des applications performantes et évolutives."
+    },
+    "work": {
+      "title": "Expérience professionnelle",
+      "exp": [
+        {
+          "company": "Vulcania",
+          "href": "https://www.vulcania.com/",
+          "badges": [],
+          "location": "Orcines",
+          "title": "Stage BTS",
+          "logoUrl": "",
+          "start": "Janvier 2024",
+          "end": "Février 2024",
+          "description": "Conception d'une application web CRUD avec en frontend React et en Backend PHP Slim permettant de modifier les informations liées aux volcans."
+        },
+        {
+          "company": "Dafy Moto",
+          "badges": [],
+          "href": "https://www.dafy-moto.com/",
+          "location": "Beaumont",
+          "title": "Stage BTS",
+          "logoUrl": "",
+          "start": "Mai 2023",
+          "end": "Juin 2023",
+          "description": "Conception d'une application web CRUD avec Symfony et Docker permettant de gérer l'ajout de job venant de Talend."
+        },
+        {
+          "company": "Les 2 alpes trail",
+          "href": "https://www.ledefidelamuzelle.com/",
+          "badges": [],
+          "location": "Les 2 Alpes",
+          "title": "Bénévolat",
+          "logoUrl": "",
+          "start": "Aout 2022",
+          "end": "Aout 2022",
+          "description": ""
+        },
+        {
+          "company": "Fnac",
+          "href": "https://www.fnac.com/Clermont-Ferrand/Fnac-Clermont-Ferrand/cl107/w-4",
+          "badges": [],
+          "location": "Clermont-Ferrand",
+          "title": "Accueil Clientèle, renseignement, encaissement",
+          "logoUrl": "",
+          "start": "Aout 2022",
+          "end": "Aout 2022",
+          "description": "Accueil Clientèle, renseignement, encaissement"
+        }
+      ]
+    },
+    "education": {
+      "title": "Diplômes et Formations",
+      "exp": [
+        {
+          "school": "IUT Clermont Auvergne",
+          "href": "https://iut.uca.fr/",
+          "degree": "BUT Informatique",
+          "logoUrl": "/logo_UCA.webp",
+          "start": "2024"
+        },
+        {
+          "school": "Lycée Godefroy de Bouillon",
+          "href": "https://www.lasalle63.fr/campus-1/bts-sio",
+          "degree": "BTS SIO SLAM, Math",
+          "logoUrl": "/godefroy.webp",
+          "start": "2024",
+          "end": "2022"
+        },
+        {
+          "school": "Lycée Lafayette",
+          "href": "https://lycee-lafayette-clermont.fr/",
+          "degree": "BAC STI2D SIN",
+          "logoUrl": "/logo_lafayette.webp",
+          "start": "2022",
+          "end": "2019"
+        }
+      ]
+    },
+    "skills": {
+      "title": "Compétences"
+    },
+    "projects": {
+      "title": "Mes Projets",
+      "exp": [
+        {
+          "title": "Pokemon TCG",
+          "href": "",
+          "ariaLabel": "Read more about my project",
+          "dates": "Jan 2024 - Feb 2024",
+          "active": true,
+          "description": "Ce projet universitaire est une application web moderne développée avec Vue 3 et Vite qui permet aux utilisateurs de gérer une collection de cartes Pokémon. L'application offre une interface intuitive pour explorer, collectionner et organiser des cartes Pokémon dans différents decks.",
+          "technologies": [
+            "Vue js",
+            "TailwindCSS",
+            "Shadcn UI"
+          ],
+          "links": [
+            {
+              "type": "Website",
+              "href": "",
+              "icon": "globe"
+            }
+          ],
+          "image": "/pokemon_vue_js.webp",
+          "video": ""
+        }
+      ]
+    }
+  },
+  "navbar": {
+    "home": {
+      "title": "Accueil",
+      "ariaLabel": "Page d'Accueil",
+      "href": "#"
+    },
+    "github": {
+      "title": "GitHub",
+      "href": "https://github.com/Stribx",
+      "ariaLabel": "Mon profil GitHub"
+    },
+    "linkedin": {
+      "title": "LinkedIn",
+      "href": "https://www.linkedin.com/in/guillaume-chambat/",
+      "ariaLabel": "Mon profil LinkedIn"
+    },
+    "darkmode": {
+      "title": "DarkMode",
+      "ariaLabel": "mode sombre"
+    }
+  }
+}
