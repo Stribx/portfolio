@@ -6,20 +6,20 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Markdown from "react-markdown";
-import { useTranslations } from 'next-intl';
 import WorkExperience from "@/types/work-experience";
 import EductaionExperience from "@/types/education-experience";
 import ProjectExperience from "@/types/project-experience";
 import { withBasePath } from "@/utils/paths";
+import { HomePage } from '@/messages/fr.json';
 
 const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
 
-  const t = useTranslations('HomePage');
-  const workExperiences = t.raw("work.exp") as WorkExperience[];
-  const educationExperiences = t.raw("education.exp") as EductaionExperience[];
-  const projectExperiences = t.raw("projects.exp") as ProjectExperience[];
+  const t = HomePage;
+  const workExperiences = t.work.exp as WorkExperience[];
+  const educationExperiences = t.education.exp as EductaionExperience[];
+  const projectExperiences = t.projects.exp as ProjectExperience[];
 
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
@@ -31,12 +31,12 @@ export default function Page() {
                 delay={BLUR_FADE_DELAY}
                 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
                 yOffset={8}
-                text={`${t("hero.title")} ${DATA.name.split(" ")[0]} 👋`}
+                text={`${t.hero.title} ${DATA.name.split(" ")[0]} 👋`}
               />
               <BlurFadeText
                 className="max-w-[600px] md:text-xl"
                 delay={BLUR_FADE_DELAY}
-                text={t("hero.description")}
+                text={t.hero.description}
               />
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
@@ -50,12 +50,12 @@ export default function Page() {
       </section>
       <section id="about">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
-          <h2 className="text-xl font-bold">{t("about.title")}</h2>
+          <h2 className="text-xl font-bold">{t.about.title}</h2>
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 4}>
           <div className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
             <Markdown>
-              {t("about.summary")}
+              {t.about.summary}
             </Markdown>
           </div>
         </BlurFade>
@@ -63,7 +63,7 @@ export default function Page() {
       <section id="work">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
-            <h2 className="text-xl font-bold">{t("work.title")}</h2>
+            <h2 className="text-xl font-bold">{t.work.title}</h2>
           </BlurFade>
           {workExperiences.map((work, id) => (
             <BlurFade
@@ -77,7 +77,7 @@ export default function Page() {
                 subtitle={work.title}
                 href={work.href}
                 badges={work.badges}
-                period={`${work.start} - ${work.end ?? t("common.present")}`}
+                period={`${work.start} - ${work.end ?? t.common.present}`}
                 description={work.description}
               />
             </BlurFade>
@@ -87,7 +87,7 @@ export default function Page() {
       <section id="education">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 7}>
-            <h2 className="text-xl font-bold">{t("education.title")}</h2>
+            <h2 className="text-xl font-bold">{t.education.title}</h2>
           </BlurFade>
           {educationExperiences.map((education, id) => (
             <BlurFade
@@ -100,7 +100,7 @@ export default function Page() {
                 altText={education.school}
                 title={education.school}
                 subtitle={education.degree}
-                period={`${education.start} - ${education.end ?? t("common.present")}`}
+                period={`${education.start} - ${education.end ?? t.common.present}`}
               />
             </BlurFade>
           ))}
@@ -109,7 +109,7 @@ export default function Page() {
       <section id="skills">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
-            <h2 className="text-xl font-bold">{t("skills.title")}</h2>
+            <h2 className="text-xl font-bold">{t.skills.title}</h2>
           </BlurFade>
           <div className="flex flex-wrap gap-1">
             {DATA.skills.map((skill, id) => (
@@ -126,7 +126,7 @@ export default function Page() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                  {t("projects.title")}
+                  {t.projects.title}
                 </div>
               </div>
             </div>

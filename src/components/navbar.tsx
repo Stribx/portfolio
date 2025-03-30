@@ -1,10 +1,10 @@
-import { useTranslations } from "next-intl";
+import { navbar } from '@/messages/fr.json';
 import { Icons } from "@/components/icons";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import { ModeToggle } from "@/components/mode-toggle";
 
 export function Navbar() {
-  const t = useTranslations("navbar");
+  const t = navbar;
 
   const navItems = [
     {
@@ -27,16 +27,16 @@ export function Navbar() {
     },
     {
       key: "darkmode",
-      icon: <ModeToggle ariaLabel={t.raw("darkmode").ariaLabel} />,
+      icon: <ModeToggle ariaLabel={t.darkmode.ariaLabel} />,
     },
   ].map(({ key, icon }) => {
-    const item = t.raw(key);
+    const item = t[key as keyof typeof t];
 
     return {
       title: item.title,
       icon,
       ariaLabel: item.ariaLabel,
-      href: item.href,
+      href: "href" in item ? item.href : "#",
     };
   });
 
