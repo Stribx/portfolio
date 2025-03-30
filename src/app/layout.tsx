@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/navbar";
+import Navbar from "@/components/navbar";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -47,12 +47,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
-  params,
 }: Readonly<{
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
 }>) {
   return (
     <html lang="fr" suppressHydrationWarning>

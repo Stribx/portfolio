@@ -1,10 +1,10 @@
-import { navbar } from '@/messages/fr.json';
+import fr from '@/messages/fr.json';
 import { Icons } from "@/components/icons";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import { ModeToggle } from "@/components/mode-toggle";
 
-export function Navbar() {
-  const t = navbar;
+export default function Navbar() {
+  const t = fr.navbar;
 
   const navItems = [
     {

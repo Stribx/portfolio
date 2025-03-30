@@ -10,13 +10,13 @@ import WorkExperience from "@/types/work-experience";
 import EductaionExperience from "@/types/education-experience";
 import ProjectExperience from "@/types/project-experience";
 import { withBasePath } from "@/utils/paths";
-import { HomePage } from '@/messages/fr.json';
+import fr from '@/messages/fr.json';
 
 const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
 
-  const t = HomePage;
+  const t = fr.HomePage;
   const workExperiences = t.work.exp as WorkExperience[];
   const educationExperiences = t.education.exp as EductaionExperience[];
   const projectExperiences = t.projects.exp as ProjectExperience[];
