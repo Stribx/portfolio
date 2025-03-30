@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "../globals.css";
-import { NextIntlClientProvider } from "next-intl";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
@@ -58,8 +58,9 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }>) {
-  const { locale } = await params;
-  if (!routing.locales.includes(locale as any)) {
+  const { locale } = await params || 'fr';
+  console.log(locale)
+  if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
 

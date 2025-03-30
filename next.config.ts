@@ -5,7 +5,6 @@ import { basePath } from "@/utils/paths";
 const nextConfig: NextConfig = {
   output: "standalone",
   basePath: basePath,
-  assetPrefix: `${basePath}/`,
   trailingSlash: true
 };
 
