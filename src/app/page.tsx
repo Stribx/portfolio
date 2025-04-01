@@ -96,7 +96,7 @@ export default function Page() {
             >
               <ResumeCard
                 href={education.href}
-                logoUrl={withBasePath(education.logoUrl)}
+                logoUrl={withBasePath(education.logoUrl) ?? ""}
                 altText={education.school}
                 title={education.school}
                 subtitle={education.degree}
@@ -144,8 +144,8 @@ export default function Page() {
                   description={project.description}
                   dates={project.dates}
                   tags={project.technologies}
-                  image={project.image}
-                  video={project.video}
+                  image={withBasePath(project.image ?? "")}
+                  video={withBasePath(project.video ?? "")}
                   links={project.links}
                 />
               </BlurFade>

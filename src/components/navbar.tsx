@@ -11,24 +11,24 @@ export default function Navbar() {
       key: "home",
       icon: (
         <Icons.home className="size-full text-neutral-500 dark:text-neutral-300" />
-      ),
+      )
     },
     {
       key: "github",
       icon: (
         <Icons.github className="size-full text-neutral-500 dark:text-neutral-300" />
-      ),
+      )
     },
     {
       key: "linkedin",
       icon: (
         <Icons.linkedin className="size-full text-neutral-500 dark:text-neutral-300" />
-      ),
+      )
     },
     {
       key: "darkmode",
       icon: <ModeToggle ariaLabel={t.darkmode.ariaLabel} />,
-    },
+    }
   ].map(({ key, icon }) => {
     const item = t[key as keyof typeof t];
 
