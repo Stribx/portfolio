@@ -4,7 +4,7 @@ ARG NGINX_VERSION=1.27.4-alpine3.21-slim
 FROM oven/bun:${BUN_VERSION} AS deps
 WORKDIR /app
 COPY package.json bun.lock* ./
-RUN bun install --frozen-lockfile --production
+RUN bun install --frozen-lockfile
 
 FROM oven/bun:${BUN_VERSION} AS builder
 WORKDIR /app
