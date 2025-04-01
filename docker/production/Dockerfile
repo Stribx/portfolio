@@ -1,13 +1,12 @@
 ARG BUN_VERSION=1.2.7-alpine
+ARG NGINX_VERSION=1.27.4-alpine3.21-slim
 
-FROM oven/bun:${BUN_VERSION} AS base
-
-FROM base AS deps
+FROM oven/bun:${BUN_VERSION} AS deps
 WORKDIR /app
 COPY package.json bun.lock* ./
-RUN bun install --frozen-lockfile
+RUN bun install --frozen-lockfile --production
 
-FROM base AS builder
+FROM oven/bun:${BUN_VERSION} AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
@@ -17,25 +16,12 @@ ENV NEXT_PUBLIC_BASE_PATH=/containers/guillaumechambat-portfolio
 
 RUN bun run build
 
-FROM base AS runner
-WORKDIR /app
+FROM nginx:${NGINX_VERSION} AS production
 
-ENV NODE_ENV=production
-ENV NEXT_TELEMETRY_DISABLED 1
-ENV NEXT_PUBLIC_BASE_PATH=/containers/guillaumechambat-portfolio
+RUN rm -rf /etc/nginx/conf.d/*
 
-RUN adduser --system --uid 1001 nextjs
-RUN mkdir .next
-RUN chown nextjs:bun .next
+COPY --from=builder /app/out /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-COPY --from=builder /app/public ./public
-COPY --from=builder --chown=nextjs:bun /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:bun /app/.next/static ./.next/static
-
-USER nextjs
-
-EXPOSE 3000
-ENV PORT=3000
-
-ENV HOSTNAME "0.0.0.0"
-CMD ["bun", "server.js"]
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

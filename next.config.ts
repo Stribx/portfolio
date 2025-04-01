@@ -2,7 +2,7 @@ import { NextConfig } from "next";
 import { basePath } from "@/utils/paths";
 
 const nextConfig: NextConfig = {
-  output: "standalone",
+  output: "export",
   basePath: basePath,
   assetPrefix: "/containers/guillaumechambat-portfolio",
   trailingSlash: true
