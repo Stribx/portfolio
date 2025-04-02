@@ -19,7 +19,7 @@ export interface ResumeCardProps {
   period: string;
   description?: string;
 }
-export const ResumeCard = ({
+const ResumeCard = ({
   logoUrl,
   altText,
   title,
@@ -108,3 +108,6 @@ export const ResumeCard = ({
     </Link>
   );
 };
+
+
+export default ResumeCard;

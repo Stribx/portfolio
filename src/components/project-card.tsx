@@ -30,7 +30,7 @@ interface Props {
   ariaLabel: string;
 }
 
-export function ProjectCard({
+export default function ProjectCard({
   title,
   href,
   description,
@@ -65,7 +65,7 @@ export function ProjectCard({
           />
         )}
         {image && (
-          <img
+          <Image
             src={image}
             alt={title}
             width={500}

@@ -1,21 +1,22 @@
 import { BlurFade } from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
-import { ProjectCard } from "@/components/project-card";
-import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
-import Markdown from "react-markdown";
 import WorkExperience from "@/types/work-experience";
 import EductaionExperience from "@/types/education-experience";
 import ProjectExperience from "@/types/project-experience";
 import { withBasePath } from "@/utils/paths";
-import fr from '@/messages/fr.json';
+import fr from "@/messages/fr.json";
+import dynamic from "next/dynamic";
 
 const BLUR_FADE_DELAY = 0.04;
 
-export default function Page() {
+const ProjectCard = dynamic(() => import("@/components/project-card"));
+const ResumeCard = dynamic(() => import("@/components/resume-card"));
+const Markdown = dynamic(() => import("react-markdown"));
 
+export default function Page() {
   const t = fr.HomePage;
   const workExperiences = t.work.exp as WorkExperience[];
   const educationExperiences = t.education.exp as EductaionExperience[];
@@ -54,9 +55,7 @@ export default function Page() {
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 4}>
           <div className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
-            <Markdown>
-              {t.about.summary}
-            </Markdown>
+            <Markdown>{t.about.summary}</Markdown>
           </div>
         </BlurFade>
       </section>
@@ -100,7 +99,9 @@ export default function Page() {
                 altText={education.school}
                 title={education.school}
                 subtitle={education.degree}
-                period={`${education.start} - ${education.end ?? t.common.present}`}
+                period={`${education.start} - ${
+                  education.end ?? t.common.present
+                }`}
               />
             </BlurFade>
           ))}
