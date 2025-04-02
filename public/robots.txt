@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+Disallow: /_next/
+Disallow: /api/
+Disallow: /admin/
+Disallow: /drafts/
+Disallow: /test/
+Disallow: /tmp/
+Disallow: /.git/
+Disallow: /.env
+Disallow: /node_modules/
+Disallow: /*.js.map
+Disallow: /private/
+Disallow: /preview/
+Disallow: /404
+Disallow: /500
+
+Sitemap: https://codefirst.iut.uca.fr/sitemap.xml
