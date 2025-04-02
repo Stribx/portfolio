@@ -93,12 +93,15 @@ const FloatingDockMobile = ({
           </motion.div>
         )}
       </AnimatePresence>
-      <button
+      <Button
         onClick={() => setOpen(!open)}
-        className="h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-800 flex items-center justify-center"
+        size="icon"
+        variant="secondary"
+        className="rounded-full"
+        aria-label="Dropup"
       >
-        <Icons.navbarcollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
-      </button>
+        <Icons.navbarcollapse />
+      </Button>
     </div>
   );
 };
