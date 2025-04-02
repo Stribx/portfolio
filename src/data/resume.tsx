@@ -5,7 +5,7 @@ export const DATA = {
   location: "Clermont-Ferrand, CF",
   locationLink: "https://www.google.com/maps/place/Clermont-Ferrand",
   description: "Welcome to my portofolio",
-  avatarUrl: "/me.webp",
+  avatarUrl: "/images/me.webp",
   skills: [
     "PHP",
     "React",
