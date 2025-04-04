@@ -26,6 +26,12 @@ export default function Navbar() {
       )
     },
     {
+      key: "cv",
+      icon: (
+        <Icons.cv className="size-full text-neutral-500 dark:text-neutral-300" />
+      )
+    },
+    {
       key: "darkmode",
       icon: <ModeToggle ariaLabel={t.darkmode.ariaLabel} />,
     }

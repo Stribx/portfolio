@@ -1,4 +1,4 @@
-ARG BUN_VERSION=1.2.7-alpine
+ARG BUN_VERSION=1.2.8alpine
 ARG NGINX_VERSION=1.27.4-alpine3.21-slim
 
 FROM oven/bun:${BUN_VERSION} AS deps

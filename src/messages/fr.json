@@ -4,7 +4,7 @@
       "present": "Aujourd'hui"
     },
     "hero": {
-      "title": "Salut, je suis",
+      "title": "Bonjour, je suis",
       "description": "Étudiant en BUT Informatique. Passionné par le développement, j’adore créer des applications performantes et bien structurées, en alliant optimisation et bonnes pratiques."
     },
     "about": {
@@ -98,7 +98,7 @@
           "title": "Pokemon TCG",
           "href": "",
           "ariaLabel": "Read more about my project",
-          "dates": "Jan 2024 - Feb 2024",
+          "dates": "Jan 2025 - Feb 2025",
           "active": true,
           "description": "Ce projet universitaire est une application web moderne développée avec Vue 3 et Vite qui permet aux utilisateurs de gérer une collection de cartes Pokémon. L'application offre une interface intuitive pour explorer, collectionner et organiser des cartes Pokémon dans différents decks.",
           "technologies": ["Vue js", "TailwindCSS", "Shadcn UI"],
@@ -110,7 +110,32 @@
             }
           ],
           "image": "/images/pokemon_vue_js.webp",
-          "video": ""
+          "video": "",
+          "images": [
+            "/images/pokemon_vue_js.webp"
+          ]
+        },
+        {
+          "title": "Ascas",
+          "href": "",
+          "ariaLabel": "Read more about my project",
+          "dates": "Sep 2024 - Avril 2025",
+          "active": true,
+          "description": "ASCAS (Application de Suivi des Conventions d'Alternances et de Stage) est une solution complète (Web/Android/API/DB) qui gère des données sensibles de façon sécurisée et conforme à la loi. Le projet a été mené tout au long de l'année, nécessitant une collaboration solide et efficace au sein de notre équipe informatique. Par ailleurs, l'application automatise l'envoi de courriels de contact. Elle récupère automatiquement les conventions et les courriels depuis l'ENT et s'appuie sur le système d'authentification de l'Université Clermont Auvergne pour garantir sa robustesse et assurer la protection des informations.",
+          "technologies": ["PHP", "TailwindCSS", "Koltin", "Postgresql", "Blazor", "Docker", "Java"],
+          "links": [
+            {
+              "type": "Website",
+              "href": "",
+              "icon": "globe"
+            }
+          ],
+          "image": "/images/ascas_1.webp",
+          "video": "",
+          "images": [
+            "/images/ascas_1.webp",
+            "/images/ascas_2.webp"
+          ]
         }
       ]
     }
@@ -130,6 +155,11 @@
       "title": "LinkedIn",
       "href": "https://www.linkedin.com/in/guillaume-chambat/",
       "ariaLabel": "Mon profil LinkedIn"
+    },
+    "cv": {
+      "title": "CV",
+      "href": "/pdf/CVGuillaumeChambat.pdf",
+      "ariaLabel": "Mon CV"
     },
     "darkmode": {
       "title": "DarkMode",

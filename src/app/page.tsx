@@ -148,6 +148,7 @@ export default function Page() {
                   image={withBasePath(project.image ?? "")}
                   video={withBasePath(project.video ?? "")}
                   links={project.links}
+                  images={project.images?.map(withBasePath) ?? ["", ""]}
                 />
               </BlurFade>
             ))}

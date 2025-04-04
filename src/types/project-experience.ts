@@ -15,4 +15,5 @@ export default interface ProjectExperience {
   }[];
   image?: string;
   video?: string;
+  images?: string[];
 }

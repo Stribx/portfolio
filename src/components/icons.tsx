@@ -6,7 +6,11 @@ import {
   IconLayoutNavbarCollapse,
   IconMoonStars,
   IconSun,
-  IconChevronRight
+  IconChevronRight,
+  IconFileCvFilled,
+  IconX,
+  IconArrowLeft,
+  IconArrowRight
 } from "@tabler/icons-react";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
@@ -19,5 +23,9 @@ export const Icons = {
   navbarcollapse: (props: IconProps) => <IconLayoutNavbarCollapse {...props} />,
   moon: (props: IconProps) => <IconMoonStars {...props} />,
   sun: (props: IconProps) => <IconSun {...props} />,
-  chevronright: (props: IconProps) => <IconChevronRight {...props} />
+  chevronright: (props: IconProps) => <IconChevronRight {...props} />,
+  cv: (props: IconProps) => <IconFileCvFilled {...props} />,
+  x: (props: IconProps) => <IconX {...props} />,
+  arrowLeft: (props: IconProps) => <IconArrowLeft {...props} />,
+  arrowRight: (props: IconProps) => <IconArrowRight {...props} />
 } as const;
