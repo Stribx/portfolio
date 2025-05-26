@@ -11,7 +11,7 @@ export default interface ProjectExperience {
   links?: readonly {
     icon: keyof typeof Icons;
     type: string;
-    href: string;
+    href?: string;
   }[];
   image?: string;
   video?: string;

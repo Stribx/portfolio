@@ -1,5 +1,5 @@
-ARG BUN_VERSION=1.2.8-alpine
-ARG NGINX_VERSION=1.27.4-alpine3.21-slim
+ARG BUN_VERSION=1.2.14-alpine
+ARG NGINX_VERSION=1.28-alpine3.21-slim
 
 FROM oven/bun:${BUN_VERSION} AS deps
 WORKDIR /app

@@ -42,7 +42,7 @@ export default function Navbar() {
       title: item.title,
       icon,
       ariaLabel: item.ariaLabel,
-      href: "href" in item ? item.href : "#",
+      href: "href" in item ? item.href : undefined,
     };
   });
 

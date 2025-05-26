@@ -9,19 +9,19 @@ import ProjectExperience from "@/types/project-experience";
 import { withBasePath } from "@/utils/paths";
 import fr from "@/messages/fr.json";
 import dynamic from "next/dynamic";
+import { marked } from "marked";
 
 const BLUR_FADE_DELAY = 0.04;
+const t = fr.HomePage;
+const html = marked.parse(t.about.summary);
+const workExperiences = t.work.exp as WorkExperience[];
+const educationExperiences = t.education.exp as EductaionExperience[];
+const projectExperiences = t.projects.exp as ProjectExperience[];
 
 const ProjectCard = dynamic(() => import("@/components/project-card"));
 const ResumeCard = dynamic(() => import("@/components/resume-card"));
-const Markdown = dynamic(() => import("react-markdown"));
 
 export default function Page() {
-  const t = fr.HomePage;
-  const workExperiences = t.work.exp as WorkExperience[];
-  const educationExperiences = t.education.exp as EductaionExperience[];
-  const projectExperiences = t.projects.exp as ProjectExperience[];
-
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
       <section id="hero">
@@ -42,7 +42,11 @@ export default function Page() {
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
               <Avatar className="size-28 border">
-                <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
+                <AvatarImage
+                  className="object-cover"
+                  alt={DATA.name}
+                  src={withBasePath(DATA.avatarUrl ?? "")}
+                />
                 <AvatarFallback>{DATA.initials}</AvatarFallback>
               </Avatar>
             </BlurFade>
@@ -54,9 +58,10 @@ export default function Page() {
           <h2 className="text-xl font-bold">{t.about.title}</h2>
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 4}>
-          <div className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
-            <Markdown>{t.about.summary}</Markdown>
-          </div>
+          <div
+            dangerouslySetInnerHTML={{ __html: html }}
+            className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert"
+          />
         </BlurFade>
       </section>
       <section id="work">

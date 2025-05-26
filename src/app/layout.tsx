@@ -52,14 +52,16 @@ export default function RootLayout({
     <html lang="fr" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
+          "min-h-screen bg-background overflow-y-scroll font-sans antialiased",
           fontSans.variable
         )}
       >
-          <ThemeProvider attribute="class" defaultTheme="light">
+        <ThemeProvider attribute="class" defaultTheme="light">
+          <div className="max-w-2xl mx-auto py-12 sm:py-24 px-6">
             {children}
             <Navbar />
-          </ThemeProvider>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
